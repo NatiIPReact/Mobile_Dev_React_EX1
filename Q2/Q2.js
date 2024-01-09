@@ -1,5 +1,8 @@
-﻿InitDuck = null;
+﻿// Stores the duck that the user inserts
+InitDuck = null;
+// The Duck class
 class Duck {
+    // Builds the object with the properties we need
     constructor(name, color, age, weight, image) {
         this.name = name;
         this.color = color;
@@ -7,6 +10,7 @@ class Duck {
         this.weight = weight;
         this.image = image;
     }
+    // Prints the duck's properties to the screen
     Show() {
         let duckProperties = ``;
         if (document.getElementById('duckText') == undefined)
@@ -22,6 +26,7 @@ class Duck {
         img.style.maxWidth = "40%";
         document.getElementById('duckText').appendChild(img);
     }
+    // Prints quack to the screen (weight * age / 2) times and plays the Quack sound three times for the user.
     Quack() {
         let duckProperties = ``;
         if (document.getElementById('duckText') == undefined)
@@ -29,7 +34,7 @@ class Duck {
         let numOfTimes = parseInt(this.weight * this.age / 2);
         for (let i = 0; i < numOfTimes; i++)
             duckProperties += `Quack<br>`;
-        var audio = new Audio('quackSound.mp3');
+        var audio = new Audio('quackThree.mp3');
         audio.play();
         if (document.getElementById('duckText') == undefined) {
             duckProperties += `</p>`;
@@ -39,6 +44,7 @@ class Duck {
     }
 }
 
+// Called when the user initializes the duck
 function BuildDuckObject() {
     document.getElementById('submitBTN').disabled = true;
     let name = document.getElementById('name').value;
@@ -56,14 +62,18 @@ function BuildDuckObject() {
     reader.readAsDataURL(image.files[0]);
 }
 
+// Called when the user clicks the Quack button
 function Quack() {
     InitDuck.Quack();
 }
 
+// Called when the user clicks the Show button to print the duck's properties to the screen
 function Show() {
     InitDuck.Show();
 }
 
+// Sets the onsubmit logic for the DuckForm.
+// Basically, this defines what function will get called when the user submits the DuckForm form.
 function duckFormSubmit() {
     document.getElementById('DuckForm').addEventListener('submit', function (event) {
         event.preventDefault();

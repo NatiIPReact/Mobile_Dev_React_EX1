@@ -1,15 +1,17 @@
-﻿initNum = null;
+﻿// Stores the counter number that the user inserts
+initNum = null;
 
+// The Counter class
 class Counter {
-    constructor() {
-        this.num = 0;
-    }
+    // Initializes the counter with the user's input
     Initialize(num) {
         this.num = num;
     }
+    // Increments the counter by 1
     Increment() {
         this.num++;
     }
+    // Prints to the screen all the numbers from zero to the counter
     Go() {
         let text = ``;
         if (document.getElementById('goText') == undefined)
@@ -28,6 +30,7 @@ class Counter {
     }
 }
 
+// Called when the user initializes a number
 function Init() {
     let n = parseInt(document.getElementById('numValue').value);
     if (isNaN(n)) {
@@ -39,6 +42,7 @@ function Init() {
     document.getElementById('numValue').value = "";
 }
 
+// Called when the user clicks the + button
 function Increment() {
     if (initNum == null) {
         alert("Initialize a number first!");
@@ -47,6 +51,7 @@ function Increment() {
     initNum.Increment();
 }
 
+// Called when the user clicks the Go button to print using the Go function of the Counter class
 function Go() {
     if (initNum == null) {
         alert("Initialize a number first!");

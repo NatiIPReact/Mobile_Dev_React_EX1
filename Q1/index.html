@@ -4,12 +4,18 @@
     <meta charset="utf-8" />
     <title></title>
     <script src="Q1.js"></script>
+    <link href="Q1css.css" rel="stylesheet">
 </head>
 <body>
+    <h1>Question 1</h1>
     <input type="number" id="numValue"/>
-    <input type="button" id="start" value="Start" onclick="Init()"/>
+    <div class="buttonDiv">
+        <input type="button" id="start" value="Start" onclick="Init()" class="button-10"/>
+    </div>
     <br />
-    <input type="button" id="increment" onclick="Increment()" value="+"/>
-    <input type="button" id="go" onclick="Go()" value="Go"/>
+    <div class="buttonDiv">
+        <input type="button" id="increment" onclick="Increment()" value="+" class="button-10"/>
+        <input type="button" id="go" onclick="Go()" value="Go" class="button-10" style="margin-left:10px;"/>
+    </div>
 </body>
 </html>

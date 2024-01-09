@@ -4,8 +4,10 @@
     <meta charset="utf-8" />
     <title></title>
     <script src="Q3.js"></script>
+    <link rel="stylesheet" href="Q3css.css">
 </head>
 <body onload="submitCountryForm()">
+    <h1>Question 3</h1>
     <form id="InsertCountry">
         <span>Name: </span><input type="text" id="CountryName" required>
         <br>
@@ -15,7 +17,9 @@
         <br>
         <span>Seconds: </span><input type="number" id="Seconds" required>
         <br>
-        <button>Submit</button>
+        <div style="display:flex;justify-content:center;margin:15px;">
+            <button class="button-10" role="button">Submit</button>
+        </div>
     </form>
     <p id="CountriesText"></p>
 </body>
